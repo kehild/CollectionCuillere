@@ -1,0 +1,19 @@
+			
+Ile de Ré       Ville
+Fort Boyard       Monument
+La Rochelle       Ville
+Le Fort Louvois       Monument
+La cité de l huitre       Monument
+Saintes       Ville
+Charente-Maritime       Region
+Ile D Oléron       Ville
+Royan       Ville
+Port de la Rochelle       Monument
+Saint Jean D Angély       Ville
+La marais poitevin       Monument
+Phare de l ile de l Olero       Monument
+Jonvac       Ville
+Talmont       Ville
+Meschers       Ville
+Saint Georges de Didonne       Ville
+		

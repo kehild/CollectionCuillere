@@ -1,0 +1,2 @@
+												Bienvenue sur ma collection de Cuillere
+Ce site permet de gerer cette collection en offrant de nombreuses fonctionnalites : Saisie de cuillere (Nom, Nombre, Origine, Categorie et departement).Visualisation des cuilleres suivant les categories. Total du nombre de cuillere, total par categorie et total par origine. Il y a egalement une liste de parametre permettant notamment d'exporter la base de donnees.
