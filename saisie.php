@@ -1,3 +1,6 @@
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.autocomplete.min.js"></script>
+
 <?php
 include_once "header.php";
 include_once "bdd/webservice.php";
@@ -39,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	   	 if(!preg_match("/^[1-9]*$/",$nombre)) {
 	      		$nombreErreur = "Le Champs Nombre mal rempli";
 	    	}
-		if(!preg_match("/^[1-9]*$/",$departements)){
+		if(!preg_match("/^[0-9]*$/",$departements)){
 			$departementsErreur = "Le Champs Departements est mal rempli";
 		}
 		if(!preg_match("/^[aA-zZéèàêâù -]*$/",$nom)){
@@ -94,6 +97,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	</br></br>
   </form>
 </div>
+
+<script>
+   $(document).ready(function() {
+    $('#origine').autocomplete({
+        serviceUrl: 'auto.php',
+        dataType: 'json'
+    });
+}); 
+    
+</script>    
 
 <?php
 	include_once"footer.php";

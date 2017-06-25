@@ -387,5 +387,32 @@ font-size:12px;
 }
 }
 
+// autocompletion
 
+.autocomplete-suggestions { 
+    
+    border: 1px solid #999; 
+    background: #f4eaea; 
+    overflow: auto; 
+    
+}
+.autocomplete-suggestion { 
+    
+    padding: 2px 5px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    color: red;
+}
+.autocomplete-selected { 
+    
+    background: #40A497; 
+}
+.autocomplete-suggestions strong { 
+    
+    font-weight: normal; 
+    color: #f24b58; 
+
+}
+
+ 
 
