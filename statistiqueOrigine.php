@@ -6,9 +6,17 @@ include_once "bdd/connexion.php";
 <section>
 	<div class="transbox">
 		<p><?php  
-			$cui = new webservice($db);
-			$cui->TotalOrigine($db);
-			?>
+
+                        if(isset($_GET['origine'])){
+				
+                            $cui = new Webservice($db);
+                            $cui->ListeOrigine($db);
+			}
+                
+                        $cui = new webservice($db);
+                        $cui->TotalOrigine($db);
+
+                    ?>
 		</p>
 	</div>
 </section>

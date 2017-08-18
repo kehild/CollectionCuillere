@@ -247,16 +247,49 @@ function TotalOrigine($db){
 			echo "<table id='dernier' align='center'>";
 			
 			echo "<tr><th>"; echo "Total Par Origine"; echo "</th>";
-			echo "<th>"; echo "Origine"; echo "</th></tr>";
+			echo "<th>"; echo "Origine"; echo "</th>";
+                        echo "<th>"; echo "Liste"; echo "</th></tr>";
 			
 			foreach(($stmt->fetchAll()) as $toto){
 
 				echo "<tr><th>"; echo $toto['COUNT(nom)']; echo "</th>";
-				echo "<th>"; echo utf8_encode($toto['origine']); echo "</th></tr>";
+				echo "<th>"; echo utf8_encode($toto['origine']); echo "</th>";
+                                echo "<th>"; echo '<a href="searchorigine.php?origine='.$toto['origine'].'" ><img src="image/modifier.png"></a>'; echo "</th> </tr>";
 				
 			}
 			echo "</table>";
 }
+
+ 	function ListeOrigine($db){
+		
+		try {
+		echo "Résultat Origine : " .$_GET['origine']. "";
+		echo "</br> </br>";
+		$stmt = $db->prepare("SELECT * FROM cuilieres where origine='" .$_GET['origine']. "'"); 
+		$stmt->execute();
+
+		echo "<table id='dernier' align='center'>";
+		
+                echo "<tr><th>"; echo "Nom"; echo "</th>";
+		echo "<th>"; echo "Départements"; echo "</th></tr>";
+
+		foreach(($stmt->fetchAll()) as $tata){
+			
+		echo "<tr><th>"; echo stripslashes($tata['nom']); echo "</th>";
+		echo "<th>"; echo stripslashes($tata['departements']); echo "</th></tr>";
+
+		}
+
+		echo "</table>";?>
+     		<form method="post" action="statistiqueOrigine.php">
+			<input type="submit" name="Retour" value="Retour">
+		</form>               
+                    <?php
+		}catch(Exception $e){			
+				echo("<h1>Erreur : Base de données </h1>");
+				die('Erreur : ' .$e->getMessage());
+		}
+	}
 
 
 function Saisie($db,$nom,$nombre,$origine,$categorie,$departements){

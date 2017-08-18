@@ -57,7 +57,8 @@ if(isset($_POST['connexion'])){ // si le bouton "Connexion" est appuyé
 
 
 if(isset($_POST['déconnexion'])) {
-	session_unset(); 
+	$_SESSION = array();
+        session_unset(); 
 	session_destroy();
 	echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
 
